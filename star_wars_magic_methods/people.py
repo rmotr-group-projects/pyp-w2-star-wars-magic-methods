@@ -8,10 +8,16 @@ class People(object):
     >>, negative(-x), positive(+x), invert(~x), ^, == You should
     also have two properties light_side and dark_side
     """
+
     def __init__(self, name, dark_side=False):
+        self.name = name
         
-        pass
-    
+        self.dark_side = dark_side
+        if self.dark_side:
+            self.light_side = False
+        else:
+            self.light_side = True
+
     # ===================================
     #  TO DO LIST
     # ===================================
@@ -28,5 +34,5 @@ class People(object):
 
     def __eq__(self, other):
         # overload == operation
-        return self.value == other.value
+        return self.name == other.name
     
