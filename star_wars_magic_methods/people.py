@@ -4,4 +4,9 @@ class People(object):
         self.dark_side=dark_side
         self.light_side=light_side
         
-    
+    def __str__(self):
+        return self.name
+        
+    def obiwan(self):
+        returnStr=("Help me "+self.name+", you're my only hope.")
+        return returnStr
