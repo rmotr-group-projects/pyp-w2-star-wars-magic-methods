@@ -11,8 +11,8 @@ class SaberCrystal(object):
         col = []
         for i in range(len(self.color)):
             col.append(self.color[i] + other.color[i])
-        return tuple(col)
+        return SaberCrystal(color = tuple(col)))
     
-        
+    
         
     
