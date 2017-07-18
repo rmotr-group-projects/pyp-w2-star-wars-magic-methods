@@ -23,36 +23,67 @@ class People(object):
 
     def __eq__(self, other):
         # overload == operation
-        return self.name == other.name
+        try:
+            if self.name == "Greedo" and other.name == "Han Solo":
+                return "Han Solo shoots Greedo. BECAUSE HAN SHOOTS FIRST."
+            else:
+                return "{} shoots {}.".format(self.name, other.name)
+        except:
+            raise TypeError
 
-    # def callable
-    # x() "callable"
-    #    if self.name == 'Obi-Wan Kenobi':
-    #       return "Help me Obi-Wan Kenobi, you're my only hope."
+    def __call__(self):
+        # x() "callable"
+        if self.name == 'Obi-Wan Kenobi':
+            return "Help me Obi-Wan Kenobi, you're my only hope."
 
-    # def __div__(self, other):
-    #     ahsoka / ventress, 
-    #     return "{} swings a lightsaber at {}.".format(self.name, other.name)
-    # with self.assertRaises(TypeError):
-    #     ahsoka / 2.5
+    def __invert__(self):
+        # overload ~ operator
+        if self.dark_side:
+            self.light_side = True
+            self.dark_side = False
+        else:
+            self.light_side = False
+            self.dark_side = True
+        
+    def __xor__(self, other):
+        # overload ^ operator
+        try:
+            return "{} force chokes {}.".format(self.name, other.name)
+        except:
+            raise TypeError
 
-    # def __mult__(self, other):
-    #     return "{} throws a thermal detonator at {}!".format(self.name, other.name)
-    
-    # def __shift_left__(self, other):
-    # TODO find name for <<
-    
-    # def __shift_right__(self, other):
-    # TODO find name for >>
 
-    # def __neg__(self):
-    #     pass
+    def __lshift__(self, other):
+        # overload <<
+        try:
+            return "{} uses the force to pull {} towards them.".format(self.name, other.name)
+        except:
+            raise TypeError
 
-    # def __pos__(self):
-    #     pass
+    def __rshift__(self, other):
+        # overload >>
+        try:
+            return "{} uses the force to push {} away from them.".format(self.name, other.name)
+        except:
+            raise TypeError
 
-    # def __tilde__(self):
-    #     pass
-    
-    # def __or__(self):
-    #     pass
+    def __div__(self, other):
+        # overload /
+        try:
+            return "{} swings a lightsaber at {}.".format(self.name, other.name)
+        except:
+            raise TypeError
+
+    def __mul__(self, other):
+        try:
+            return "{} throws a thermal detonator at {}!".format(self.name, other.name)
+        except:
+            raise TypeError
+
+    def __neg__(self):
+        self.dark_side = True
+        self.light_side = False
+
+    def __pos__(self):
+        self.light_side = True
+        self.dark_side = False
