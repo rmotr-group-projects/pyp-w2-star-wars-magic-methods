@@ -17,6 +17,10 @@ class People(object):
             self.light_side = False
         else:
             self.light_side = True
+    
+    def __str__(self):
+        return self.name
+
 
     # ===================================
     #  TO DO LIST
