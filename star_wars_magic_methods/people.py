@@ -9,4 +9,24 @@ class People(object):
     also have two properties light_side and dark_side
     """
     def __init__(self, name, dark_side=False):
+        
         pass
+    
+    # ===================================
+    #  TO DO LIST
+    # ===================================
+    # x() "callable"
+    # /
+    # *
+    # <<
+    # >>
+    # - unary op
+    # + unary op
+    # ~
+    # ^
+    # ===================================
+
+    def __eq__(self, other):
+        # overload == operation
+        return self.value == other.value
+    
