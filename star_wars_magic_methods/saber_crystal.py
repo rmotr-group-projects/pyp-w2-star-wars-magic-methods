@@ -17,4 +17,8 @@ class SaberCrystal(object):
         else:
             return SaberCrystal(color = (self.red+other[0], self.green+other[1],self.blue+other[2]))
             
-
+    def __sub__(self,other):
+        if isinstance(other,SaberCrystal):
+            return SaberCrystal(color = (self.red-other.red, self.green-other.green, self.blue-other.blue))
+        else:
+            return SaberCrystal(color = (self.red-other[0], self.green-other[1],self.blue-other[2]))
