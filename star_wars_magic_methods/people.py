@@ -23,4 +23,10 @@ class People(object):
             return self.name+" throws a thermal detonator at "+other.name+"!"
         else:
             raise TypeError()
+            
+    def __rshift__(self,other):
+        if isinstance(other,People):
+            return self.name+" uses the force to push "+other.name+" away from them."
+        else:
+            raise TypeError()
 
