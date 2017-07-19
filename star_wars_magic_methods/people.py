@@ -35,3 +35,9 @@ class People(object):
             return self.name+" uses the force to pull "+other.name+" towards them."
         else:
             raise TypeError()
+            
+    def __eq__(self,other):
+        if self.name=="Han Solo":
+            return self.name+" shoots "+other.name+"."
+        else:
+            return other.name+" shoots "+self.name+". BECAUSE HAN SHOOTS FIRST."
