@@ -35,6 +35,8 @@ class People(object):
         # x() "callable"
         if self.name == 'Obi-Wan Kenobi':
             return "Help me Obi-Wan Kenobi, you're my only hope."
+        else:
+            return "You're not Obi-Wan. Where's Obi-Wan? We need him."
 
     def __invert__(self):
         # overload ~ operator
