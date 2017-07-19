@@ -30,3 +30,8 @@ class People(object):
         else:
             raise TypeError()
 
+    def __lshift__(self,other):
+        if isinstance(other,People):
+            return self.name+" uses the force to pull "+other.name+" towards them."
+        else:
+            raise TypeError()
