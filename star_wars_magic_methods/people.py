@@ -57,3 +57,6 @@ class People(object):
             self.light_side=False
         else:
             self.light_side=True
+    
+    def __xor__(self,other):
+        return self.name+" force chokes "+other.name+"."
