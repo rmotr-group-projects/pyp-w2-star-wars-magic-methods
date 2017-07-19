@@ -13,7 +13,7 @@ class People(object):
         return "Help me "+self.name+", you're my only hope."
         
     def __div__(self,other):
-        if other==str:
+        if isinstance(other,People):
             return self.name+" swings a lightsaber at "+other.name+"."
         else:
             raise TypeError()
