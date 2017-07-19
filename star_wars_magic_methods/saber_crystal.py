@@ -23,13 +23,11 @@ class SaberCrystal(object):
 
     @property
     def color(self):
-        return (self.red, self.green, self.blue)
-
-    def alter_color(self, alteration):
-        curr_color = self.color()
-        print(curr_color)
+        return self.red, self.green, self.blue
 
     def __add__(self, other):
+        if type(other) == tuple:
+            other = SaberCrystal((other[0], other[1], other[2]))
         self.red += other.red
         if self.red > 255:
             self.red = 255
@@ -45,6 +43,8 @@ class SaberCrystal(object):
         return self
     
     def __eq__(self, other):
+        if str(type(other)) == "<class 'tuple'>":
+            other = SaberCrystal((other[0], other[1], other[2]))
         if self.red != other.red:
             return False
         if self.green != other.green:
@@ -52,7 +52,6 @@ class SaberCrystal(object):
         if self.blue != other.blue:
             return False
         return True
-
 
     def __sub__(self, args):
         pass
