@@ -17,4 +17,10 @@ class People(object):
             return self.name+" swings a lightsaber at "+other.name+"."
         else:
             raise TypeError()
+            
+    def __mul__(self,other):
+        if isinstance(other,People):
+            return self.name+" throws a thermal detonator at "+other.name+"!"
+        else:
+            raise TypeError()
 
