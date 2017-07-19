@@ -41,3 +41,7 @@ class People(object):
             return self.name+" shoots "+other.name+"."
         else:
             return other.name+" shoots "+self.name+". BECAUSE HAN SHOOTS FIRST."
+            
+    def __neg__(self):
+        self.dark_side=True
+        self.light_side=False
