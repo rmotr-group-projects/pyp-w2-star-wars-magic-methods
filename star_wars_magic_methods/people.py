@@ -7,6 +7,7 @@ class People(object):
     def __str__(self):
         return self.name
         
-    def obiwan(self):
-        returnStr=("Help me "+self.name+", you're my only hope.")
-        return returnStr
+    def __call__(self):
+        return "Help me "+self.name+", you're my only hope."
+
+
