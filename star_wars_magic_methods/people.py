@@ -51,3 +51,9 @@ class People(object):
     def __pos__(self):
         self.dark_side=False
         self.light_side=True
+        
+    def __invert__(self):
+        if self.light_side==True:
+            self.light_side=False
+        else:
+            self.light_side=True
