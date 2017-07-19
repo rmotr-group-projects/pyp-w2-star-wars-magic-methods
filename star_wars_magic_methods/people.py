@@ -1,3 +1,5 @@
+#from __future__ import division 
+
 class People(object):
     def __init__(self, name, dark_side=False,light_side=True):
         self.name=name
@@ -9,5 +11,10 @@ class People(object):
         
     def __call__(self):
         return "Help me "+self.name+", you're my only hope."
-
+        
+    def __div__(self,other):
+        if other==str:
+            return self.name+" swings a lightsaber at "+other.name+"."
+        else:
+            raise TypeError()
 
