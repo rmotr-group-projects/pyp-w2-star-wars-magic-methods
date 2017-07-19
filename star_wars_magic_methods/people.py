@@ -5,6 +5,8 @@ class People(object):
         self.name=name
         self.dark_side=dark_side
         self.light_side=light_side
+        if self.dark_side==True:
+            self.light_side=False
         
     def __str__(self):
         return self.name
@@ -45,3 +47,7 @@ class People(object):
     def __neg__(self):
         self.dark_side=True
         self.light_side=False
+        
+    def __pos__(self):
+        self.dark_side=False
+        self.light_side=True
