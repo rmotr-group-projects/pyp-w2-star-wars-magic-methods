@@ -24,7 +24,7 @@ class People(object):
         try: 
             return "{} throws a thermal detonator at {}!".format(self.name, other.name)
         except:
-            raise TypeError
+        try: 
             
     
     def __rshift__(self, other): 
@@ -62,8 +62,12 @@ class People(object):
         
     
     def __eq__(self,other):
-        if self.name == 'Greedo' and other.name == 'Han Solo':
-            return '{} shoots {}. BECAUSE HAN SHOOTS FIRST.'.format(other.name, self.name)
-        else: 
-            return '{} shoots {}.'.format(self.name, other.name)
-            
+        self.name==other.name:
+            return '{} shoots {}'.format(self.name, other.name)
+        if other.name==self.name:
+            first_name = self.name.split(' ', 1)[0]
+            return '{} shoots {}. BECAUSE {} SHOOTS FIRST.'.format(self.name, other.name, first_name.upper())
+    '''
+    def __eq__(self, other):
+	return self.name==other.name
+    '''
