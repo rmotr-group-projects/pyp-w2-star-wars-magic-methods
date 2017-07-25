@@ -65,6 +65,8 @@ class People(object):
             return 'Han Solo shoots Greedo.'
         else:
             return 'Han Solo shoots Greedo. BECAUSE HAN SHOOTS FIRST.'
+    
+    __truediv__ = __div__
         
             
     
