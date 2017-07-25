@@ -20,7 +20,6 @@ class People(object):
         except: 
             raise TypeError
     
-    __div__ = __truediv__
     
     def __mul__(self,other):
         try: 
@@ -68,4 +67,6 @@ class People(object):
             return '{} shoots {}. BECAUSE HAN SHOOTS FIRST.'.format(other.name, self.name)
         else: 
             return '{} shoots {}.'.format(self.name, other.name)
+    
+    __truediv__ = __div__
             
