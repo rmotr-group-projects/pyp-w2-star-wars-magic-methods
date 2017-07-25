@@ -20,6 +20,8 @@ class People(object):
         except: 
             raise TypeError
     
+    __div__ = __truediv__
+    
     def __mul__(self,other):
         try: 
             return "{} throws a thermal detonator at {}!".format(self.name, other.name)
