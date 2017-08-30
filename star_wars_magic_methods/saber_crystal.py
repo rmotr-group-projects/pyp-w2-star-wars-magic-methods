@@ -87,9 +87,9 @@ class SaberCrystal(object):
             return new_object
         
         elif isinstance(other, tuple) and len(other) == 3:
-            red = self.red + other[0]
-            green = self.green + other[1]
-            blue = self.blue + other[2]
+            red = self.red - other[0]
+            green = self.green - other[1]
+            blue = self.blue - other[2]
             
             if red < 0:
                 red = 0
