@@ -1,9 +1,8 @@
 class People(object):
     def __init__(self, name, dark_side=False):
         self.name = name
-        self.dark_side = dark_side
-        self.light_side = not dark_side
-        
+        self._dark_side = dark_side
+
     def __str__(self):
         return self.name
     
@@ -31,18 +30,22 @@ class People(object):
             return "{} uses the force to pull {} towards them.".format(self, other)
         raise TypeError()
 
+    @property
+    def dark_side(self):
+        return self._dark_side
     
+    @property
+    def light_side(self):
+        return not self._dark_side
+        
     def __neg__(self):
-        self.dark_side = True
-        self.light_side = False
+        self._dark_side = True
 
     def __pos__(self):
-        self.light_side = True
-        self.dark_side = False
+        self._dark_side = False
     
     def __invert__(self):
-        self.dark_side = not self.dark_side
-        self.light_side = not self.light_side
+        self._dark_side = not self._dark_side
 
     def __xor__(self, other):
         if isinstance(other, People):
