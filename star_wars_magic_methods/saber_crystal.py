@@ -1,8 +1,8 @@
 class SaberCrystal(object):
     def __init__(self, color=(255,0,0)):
-        self.color = color
         self.red = color[0]
         self.green = color[1]
+        self.blue = color[2]
     
     @property
     def color(self):
