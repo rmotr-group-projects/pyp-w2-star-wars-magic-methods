@@ -3,8 +3,11 @@ class SaberCrystal(object):
         self.color = color
         self.red = color[0]
         self.green = color[1]
-        self.blue = color[2]
     
+    @property
+    def color(self):
+        return (self.red, self.green, self.blue)
+
     def __str__(self):
         return str(self.color)
     
