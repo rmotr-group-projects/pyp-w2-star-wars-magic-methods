@@ -9,7 +9,7 @@ class People(object):
     def __call__(self):
         return "Help me {}, you're my only hope.".format(self)
     
-    def __div__(self, other):
+    def __truediv__(self, other):
         if isinstance(other, People):
             return "{} swings a lightsaber at {}.".format(self, other)
         raise TypeError()
@@ -60,3 +60,5 @@ class People(object):
             else:
                 return "{} shoots {}.".format(self, other)
         raise TypeError()
+    
+    __div__ = __truediv__
