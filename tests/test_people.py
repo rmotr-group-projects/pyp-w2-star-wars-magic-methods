@@ -77,3 +77,5 @@ class PeopleTestCase(unittest.TestCase):
         greedo = People('Greedo')
         self.assertEquals(han == greedo, 'Han Solo shoots Greedo.')
         self.assertEquals(greedo == han, 'Han Solo shoots Greedo. BECAUSE HAN SHOOTS FIRST.')
+        
+    
