@@ -20,7 +20,6 @@ class People(object):
         except: 
             raise TypeError
     
-    
     def __mul__(self,other):
         try: 
             return "{} throws a thermal detonator at {}!".format(self.name, other.name)
@@ -51,7 +50,7 @@ class People(object):
         self.dark_side = False
 
     def __invert__(self): 
-        if self.light_side is True:
+        if self.light_sude is True:
             self.light_side = False
             self.dark_side = True
         else:
@@ -63,10 +62,12 @@ class People(object):
         
     
     def __eq__(self,other):
-        if self.name == 'Greedo' and other.name == 'Han Solo':
-            return '{} shoots {}. BECAUSE HAN SHOOTS FIRST.'.format(other.name, self.name)
-        else: 
-            return '{} shoots {}.'.format(self.name, other.name)
-    
-    __truediv__ = __div__
-            
+        self.name==other.name:
+            return '{} shoots {}'.format(self.name, other.name)
+        if other.name==self.name:
+            first_name = self.name.split(' ', 1)[0]
+            return '{} shoots {}. BECAUSE {} SHOOTS FIRST.'.format(self.name, other.name, first_name.upper())
+    '''
+    def __eq__(self, other):
+	return self.name==other.name
+    '''
