@@ -10,15 +10,50 @@ class People(object):
     @property
     def dark_side(self):
         return self._dark_side
+        
+    def test_class(self, other):
+        if type(self) is not People or type(other) is not People:
+            raise TypeError()
     
     def __str__(self):
         return self.name
-        
+    # Call for only hope   
     def __call__(self):
         return "Help me {}, you're my only hope.".format(self.name)
-        
+    # Swings lightsaber    
     def __div__(self, other):
-        if type(self) is not People or type(other) is not People:
-            raise TypeError()
+        People.test_class(self,other)
         return "{} swings a lightsaber at {}.".format(self.name, other.name)
+    # Thermal detonator    
+    def __mul__(self, other):
+        People.test_class(self,other)
+        return '{} throws a thermal detonator at {}!'.format(self.name, other.name)
+    # Force Push    
+    def __rshift__(self, other):
+        People.test_class(self,other)
+        return '{} uses the force to push {} away from them.'.format(self.name, other.name)
+    # Force Pull
+    def __lshift__(self, other):
+        People.test_class(self,other)
+        return '{} uses the force to pull {} towards them.'.format(self.name, other.name)
+        
+    # To the dark side
+    def __neg__(self):
+        self._dark_side = True
+    # To the light side
+    def __pos__(self):
+        self._dark_side = False
+    # Flip sides
+    def __invert__(self):
+        self._dark_side = not self._dark_side
+    # Force choke
+    def __xor__(self, other):
+        return "{} force chokes {}.".format(self.name, other.name)
+    # shoots
+    def __eq__(self,other):
+        if str(self) == 'Han Solo':
+            return '{} shoots {}.'.format(self.name, other.name)
+        return '{} shoots {}. BECAUSE {} SHOOTS FIRST.'.format(other.name, self.name, str(other)[:3].upper())
+            
+        
         
