@@ -7,7 +7,7 @@ class People(object):
         return self.name
     
     def __call__(self):
-        return "Help me Obi-Wan Kenobi, you're my only hope."
+        return "Help me " + self.name + ", you're my only hope."
     
     def __div__(self, other):
         if not isinstance(other, People):
