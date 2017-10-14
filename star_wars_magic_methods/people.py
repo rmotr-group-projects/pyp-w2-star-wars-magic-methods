@@ -10,20 +10,25 @@ class People(object):
     @property
     def dark_side(self):
         return self._dark_side
-        
+       
     def test_class(self, other):
-        if type(self) is not People or type(other) is not People:
+        if type(other) is not People:
             raise TypeError()
     
     def __str__(self):
         return self.name
+        
     # Call for only hope   
     def __call__(self):
         return "Help me {}, you're my only hope.".format(self.name)
+    
     # Swings lightsaber    
     def __div__(self, other):
         People.test_class(self,other)
         return "{} swings a lightsaber at {}.".format(self.name, other.name)
+    
+    __truediv__ = __div__
+    
     # Thermal detonator    
     def __mul__(self, other):
         People.test_class(self,other)
@@ -36,7 +41,7 @@ class People(object):
     def __lshift__(self, other):
         People.test_class(self,other)
         return '{} uses the force to pull {} towards them.'.format(self.name, other.name)
-        
+    
     # To the dark side
     def __neg__(self):
         self._dark_side = True
