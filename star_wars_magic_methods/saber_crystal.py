@@ -18,16 +18,6 @@ class SaberCrystal(object):
             
         return SaberCrystal(tuple(new_color))
     
-    def __iadd__(self, other):
-        if not isinstance(other, SaberCrystal):
-            other = SaberCrystal(other)
-            
-        self.red = min(self.red + other.red, 255)
-        self.green = min(self.green + other.green, 255)
-        self.blue = min(self.blue + other.blue, 255)
-        self.color = (self.red, self.green, self.blue)
-        return self
-    
     def __sub__(self, other):
         if not isinstance(other, SaberCrystal):
             other = SaberCrystal(other)
@@ -37,16 +27,6 @@ class SaberCrystal(object):
             new_color[i] = max(self.color[i] - other.color[i], 0)
             
         return SaberCrystal(tuple(new_color))
-    
-    def __isub__(self, other):
-        if not isinstance(other, SaberCrystal):
-            other = SaberCrystal(other)
-            
-        self.red = max(self.red - other.red, 0)
-        self.green = max(self.green - other.green, 0)
-        self.blue = max(self.blue - other.blue, 0)
-        self.color = (self.red, self.green, self.blue)
-        return self
     
     def __contains__(self, other):
         if not isinstance(other, SaberCrystal):

@@ -7,31 +7,31 @@ class People(object):
         return self.name
     
     def __call__(self):
-        return "Help me " + self.name + ", you're my only hope."
+        return "Help me {}, you're my only hope.".format(self.name)
     
     def __div__(self, other):
         if not isinstance(other, People):
             raise TypeError()
         else:
-            return self.name + " swings a lightsaber at " + other.name + "."
+            return "{} swings a lightsaber at {}.".format(self.name, other.name)
     
     def __mul__(self, other):
         if not isinstance(other, People):
             raise TypeError()
         else:
-            return self.name + " throws a thermal detonator at " + other.name + "!"
+            return "{} throws a thermal detonator at {}!".format(self.name, other.name)
     
     def __lshift__(self, other):
         if not isinstance(other, People):
             raise TypeError()
         else:
-            return self.name + " uses the force to pull " + other.name + " towards them."
+            return "{} uses the force to pull {} towards them.".format(self.name, other.name)
     
     def __rshift__(self, other):
         if not isinstance(other, People):
             raise TypeError()
         else:
-            return self.name + " uses the force to push " + other.name + " away from them."
+            return "{} uses the force to push {} away from them.".format(self.name, other.name)
     
     def __neg__(self):
         self.dark_side = True
@@ -49,13 +49,13 @@ class People(object):
         if not isinstance(other, People):
             raise TypeError()
         else:
-            return self.name + " force chokes " + other.name + "."
+            return "{} force chokes {}.".format(self.name, other.name)
     
     def __eq__(self, other):
         if self.name == 'Greedo':
-            return other.name + " shoots " + self.name + ". BECAUSE HAN SHOOTS FIRST."
+            return "{} shoots {}. BECAUSE HAN SHOOTS FIRST.".format(other.name, self.name)
         else:
-            return self.name + " shoots " + other.name + "."
+            return "{} shoots {}.".format(self.name, other.name)
     
     @property
     def light_side(self):
