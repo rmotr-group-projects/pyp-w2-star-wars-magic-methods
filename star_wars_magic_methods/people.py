@@ -35,15 +35,12 @@ class People(object):
     
     def __neg__(self):
         self.dark_side = True
-        return self
     
     def __pos__(self):
         self.dark_side = False
-        return self
     
     def __invert__(self):
         self.dark_side = not self.dark_side
-        return self
     
     def __xor__(self, other):
         if not isinstance(other, People):
