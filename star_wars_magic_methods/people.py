@@ -19,11 +19,10 @@ class People(object):
         self.dark_side = not self.dark_side
         self.light_side = not self.light_side
         
-    def __rxor__(self, other):
-        return "{} force chokes {}.".format(self.name, other.name)
-        
     def __xor__(self, other):
         return "{} force chokes {}.".format(self.name, other.name)
+        
+    __rxor__ = __xor__
         
     def __eq__(self, other):
         
@@ -40,12 +39,8 @@ class People(object):
             raise TypeError()
             
         return '{} swings a lightsaber at {}.'.format(self.name, other.name)
-        
-    def __div__(self, other):
-        if type(other) is not People:
-            raise TypeError()
-            
-        return '{} swings a lightsaber at {}.'.format(self.name, other.name)
+    
+    __div__ = __truediv__
         
     def __mul__(self, other):
         if type(other) is not People:
