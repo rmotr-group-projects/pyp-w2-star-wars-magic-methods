@@ -14,11 +14,12 @@ class People(object):
     def __call__(self):
         return "Help me {}, you're my only hope.".format(self.name)
         
-    def __div__(self, other):
-        try:
-            return '{} swings a lightsaber at {}.'.format(self.name, other.name)
-        except: 
-            raise TypeError
+    def __truediv__(self, other):
+         if isinstance(other, People):
+             return '{} swings a lightsaber at {}.'.format(self.name, other.name)
+         else:
+             raise TypeError
+    __div__ = __truediv__
     
     # multiplication - x.__mul__(y)
     def __mul__(self, other):
