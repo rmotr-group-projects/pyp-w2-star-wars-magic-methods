@@ -52,11 +52,11 @@ class People(object):
     
     def __neg__(self):
         if self.dark_side == False:
-            ~self
+            return ~self
         
     def __pos__(self): 
         if self.dark_side == True:
-            ~self
+            return ~self
     
     def __invert__(self):
         self.dark_side = not self.dark_side
