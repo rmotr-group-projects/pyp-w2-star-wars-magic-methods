@@ -15,6 +15,8 @@ class People(object):
         else:
             return "{} swings a lightsaber at {}.".format(self.name, other.name)
     
+    __truediv__ = __div__
+    
     def __mul__(self, other):
         if not isinstance(other, People):
             raise TypeError()
