@@ -33,12 +33,6 @@ class SaberCrystal(object):
         add_blue =  self.blue + (blue * adj)
         checked_color = self.color_check((add_red, add_green, add_blue))
         return checked_color
-        #other_color = self.extract_color(other)
-        #if adj == -1:
-        #    other_color = tuple([-item for item in other_color])
-        #added_color = tuple([sum(col) for col in list(zip(self.color, other_color))])
-        #checked_color = self.color_check(added_color)
-        #return checked_color #QUESTION: or would it be poor style to just return self.color_check(added_color)
 
     def __add__(self, other, adj = 1):
         checked_color = self.add_color(other, adj)

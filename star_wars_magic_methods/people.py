@@ -22,34 +22,25 @@ class People(object):
         return 'Help me {}, you\'re my only hope.'.format(self.name)
     
     def __truediv__(self, other):
-        try:
-            isinstance(other, People)
-            return '{} swings a lightsaber at {}.'.format(self.name, other.name) #
-        except:
+        if not isinstance(other, People):
             raise TypeError()
-            #is it good enough to stop here?
+        return '{} swings a lightsaber at {}.'.format(self.name, other.name) #
         
     def __mul__(self, other):
-        try:
-            isinstance(other, People)
-            return '{} throws a thermal detonator at {}!'.format(self.name, other.name) 
-        except:
+        if not isinstance(other, People): 
             raise TypeError()
+        return '{} throws a thermal detonator at {}!'.format(self.name, other.name) 
 
     def __lshift__(self, other):
-        try: #type checking not required here to pass tests but keep for consistency
-            isinstance(other, People)
-            return '{} uses the force to pull {} towards them.'.format(self.name, other.name) 
-        except:
+        if not isinstance(other, People):
             raise TypeError() 
+        return '{} uses the force to pull {} towards them.'.format(self.name, other.name) 
 
     def __rshift__(self, other):
-        try:
-            isinstance(other, People)
-            return '{} uses the force to push {} away from them.'.format(self.name, other.name) 
-        except:
+        if not isinstance(other, People):
             raise TypeError()
-    
+        return '{} uses the force to push {} away from them.'.format(self.name, other.name) 
+
     def __neg__(self):
         if self.dark_side == False:
             return ~self
@@ -62,17 +53,15 @@ class People(object):
         self.dark_side = not self.dark_side
         
     def __xor__(self, other):
-        try: #type checking not required here to pass tests but keep for consistency
-            isinstance(other, People)
-            return '{} force chokes {}.'.format(self.name, other.name) 
-        except:
+        if not isinstance(other, People):
             raise TypeError() 
+        return '{} force chokes {}.'.format(self.name, other.name) 
     
     def __eq__(self, other): 
-        try: #type checking not required here to pass tests but keep for consistency
-            isinstance(other, People)
-            if other.name == 'Han Solo':
-                return 'Han Solo shoots {}. BECAUSE HAN SHOOTS FIRST.'.format(self.name)
+        if not isinstance(other, People):
+            raise TypeError()
+        if other.name == 'Han Solo':
+            return 'Han Solo shoots {}. BECAUSE HAN SHOOTS FIRST.'.format(self.name)
+        else:
             return '{} shoots {}.'.format(self.name, other.name) 
-        except:
-            raise TypeError() 
+            
