@@ -9,6 +9,11 @@ class SaberCrystalTestCase(unittest.TestCase):
         self.assertEquals(red_crystal.green, 0)
         self.assertEquals(red_crystal.blue, 0)
         self.assertEquals(red_crystal.color, (255,0,0))
+        
+    def test_equality(self):
+        one_crystal = SaberCrystal(color=(0,255,0))
+        two_crystal = SaberCrystal(color=(0,255,0))
+        self.assertEquals(one_crystal, two_crystal)
 
     def test_addition(self):
         red_crystal = SaberCrystal()
@@ -33,6 +38,14 @@ class SaberCrystalTestCase(unittest.TestCase):
         red_crystal += green
         red_crystal += blue
         self.assertEquals(red_crystal, white_crystal)
+        
+    def test_addition_does_not_go_over(self):
+        white_crystal = SaberCrystal(color=(255,255,255))
+        red_crystal = SaberCrystal()
+        red_crystal += white_crystal
+        self.assertEquals(red_crystal, white_crystal)
+        whiter_crystal = red_crystal + white_crystal
+        self.assertEquals(whiter_crystal, white_crystal)
 
     def test_subtraction(self):
         red_crystal = SaberCrystal()
