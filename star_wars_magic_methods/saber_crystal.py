@@ -12,9 +12,7 @@ class SaberCrystal(object):
         return (self.red, self.green, self.blue)
     
     def add_color(self, other):
-        red = other[0]
-        green = other[1]
-        blue = other[2]
+        red,blue,green = other[0], other[1], other[2]
         
         if self.red + red <= 255:
           new_red = self.red + red

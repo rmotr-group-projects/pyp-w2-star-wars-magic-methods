@@ -26,27 +26,27 @@ class People(object):
     def __div__(self, other):
         if not isinstance(other, People):
             raise TypeError
-        return self.name + " swings a lightsaber at " + other.name + "."
+        return "{} swings a lightsaber at {}.".format(self.name, other.name)
       
     def __mul__(self, other):
         if not isinstance(other, People):
             raise TypeError
-        return self.name + " throws a thermal detonator at " + other.name + "!"
+        return "{} throws a thermal detonator at {}!".format(self.name, other.name)
       
     def __rshift__(self, other):
         if not isinstance(other, People):
             raise TypeError
-        return self.name + " uses the force to push " + other.name  + " away from them."    
+        return "{} uses the force to push {} away from them.".format(self.name, other.name)
        
     def __lshift__(self, other):
         if not isinstance(other, People):
             raise TypeError
-        return self.name + " uses the force to pull " + other.name + " towards them."
+        return "{} uses the force to pull {} towards them.".format(self.name, other.name)
       
     def __xor__(self, other):
-      return self.name + " force chokes " + other.name + "."
+        return "{} force chokes {}.".format(self.name, other.name)
       
     def __eq__(self, other):
       if other.name == 'Han Solo':
-        return other.name + " shoots " + self.name + ". BECAUSE " + other.name.split(" ")[0].upper() + " SHOOTS FIRST."
-      return self.name + " shoots " + other.name + "."  
+        return "{} shoots {}. BECAUSE {} SHOOTS FIRST.".format(other.name, self.name, other.name.split(" ")[0].upper())
+      return "{} shoots {}.".format(self.name, other.name)
