@@ -15,6 +15,12 @@ class People(object):
         else:
             raise TypeError()
 
+    def __div__(self, other):
+        if type(other) == People:
+            return "{} swings a lightsaber at {}.".format(self.name, other.name)
+        else:
+            raise TypeError()
+            
     def __mul__(self, other):
         if type(other) == People:
             return "{} throws a thermal detonator at {}!".format(self.name, other.name)
