@@ -33,10 +33,12 @@ class People(object):
         raise TypeError
 
     # division
-    def __div__(self,other):
+    def __truediv__(self,other):
         if isinstance(other,People):
             return '{} {} {}.'.format(self.name,'swings a lightsaber at',other.name)
         raise TypeError
+         __div__ = __truediv__
+
     # negative number
     def __neg__(self):
         self.dark_side = True
