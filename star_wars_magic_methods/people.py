@@ -37,7 +37,7 @@ class People(object):
         if isinstance(other,People):
             return '{} {} {}.'.format(self.name,'swings a lightsaber at',other.name)
         raise TypeError
-         __div__ = __truediv__
+    __div__ = __truediv__
 
     # negative number
     def __neg__(self):
