@@ -1,34 +1,12 @@
 class People(object):
     def __init__(self, name, dark_side=False):
         self.name = name
-        
-        # assign default dark_side + light_side values
-        self.set_dark_side(dark_side)
-        self.set_light_side(not dark_side)
-        
-    # Create properties for dark + light side
-    @property
-    def dark_side(self):
-        return self._dark_side
-        
+        self.dark_side = dark_side
+
     @property
     def light_side(self):
-        return self._light_side
+        return not self.dark_side
 
-    # Create setter for dark + light side
-    def set_dark_side(self, dark_side):
-        self._dark_side = dark_side
-    
-    def set_light_side(self, light_side):
-        self._light_side = light_side
-        
-    # Create getter for dark + light side
-    def get_dark_side(self, dark_side):
-        return self.dark_side
-        
-    def get_light_side(self, light_side):
-        return self.light_side
-    
     def __str__(self):
         return self.name
     
@@ -58,15 +36,13 @@ class People(object):
         raise TypeError()
         
     def __neg__(self):
-        self.set_dark_side(True)
-        self.set_light_side(False)
+        self.dark_side = True
         
     def __pos__(self):
-        self.set_dark_side(False)
-        self.set_light_side(True)
+        self.dark_side = False
     
     def __invert__(self):
-        self.dark_side = not self.dark_side # call getter to access the property
+        self.dark_side = not self.dark_side
     
     def __xor__(self,other):
         if isinstance(other,People):
@@ -81,4 +57,3 @@ class People(object):
         else:
             return '{} shoots {}.'.format(self.name, other.name)
         
-    
