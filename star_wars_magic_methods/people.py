@@ -66,7 +66,7 @@ class People(object):
         self.set_light_side(True)
     
     def __invert__(self):
-        self.set_dark_side(not self.dark_side) # call getter to access the property
+        self.dark_side = not self.dark_side # call getter to access the property
     
     def __xor__(self,other):
         if isinstance(other,People):
