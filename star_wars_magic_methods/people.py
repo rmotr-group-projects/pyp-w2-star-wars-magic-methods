@@ -33,7 +33,7 @@ class People(object):
         raise TypeError
 
     # division
-    def __truediv__(self,other):
+    def __div__(self,other):
         if isinstance(other,People):
             return '{} {} {}.'.format(self.name,'swings a lightsaber at',other.name)
         raise TypeError
