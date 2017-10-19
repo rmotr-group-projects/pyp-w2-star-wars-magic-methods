@@ -1,6 +1,11 @@
 import unittest
 from star_wars_magic_methods.saber_crystal import SaberCrystal
 
+# Test one test file at at time:
+# PYTHONPATH=. py.test -s tests/test_customers.py
+
+# Run individual tests
+# PYTHONPATH=. py.test -s tests/ -k <TEST-NAME>
 
 class SaberCrystalTestCase(unittest.TestCase):
     def test_creation(self):
