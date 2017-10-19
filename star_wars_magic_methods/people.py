@@ -10,7 +10,7 @@ class People(object):
     def __call__(self):
         return "Help me {}, you're my only hope.".format(self)
 
-    def __div__(self, other):
+    def __truediv__(self, other):
         if not isinstance(other, People):
             raise TypeError("Can't perform operation with People object and {}"
                             .format(type(other).__name__))
@@ -61,3 +61,6 @@ class People(object):
         if other.name == 'Han Solo':
             return "Han Solo shoots {}. BECAUSE HAN SHOOTS FIRST.".format(self)
         return "{} shoots {}.".format(self, other)
+
+    # Alias for Python 2 Compatibility
+    __div__ = __truediv__
