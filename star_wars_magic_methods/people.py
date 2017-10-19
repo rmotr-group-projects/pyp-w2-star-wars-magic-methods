@@ -20,11 +20,13 @@ class People(object):
         
     def __call__(self):
         return 'Help me {}, you\'re my only hope.'.format(self.name)
-    
+
     def __truediv__(self, other):
         if not isinstance(other, People):
             raise TypeError()
         return '{} swings a lightsaber at {}.'.format(self.name, other.name) #
+
+    __div__ = __truediv__
         
     def __mul__(self, other):
         if not isinstance(other, People): 
