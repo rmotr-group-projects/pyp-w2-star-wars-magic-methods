@@ -1,5 +1,5 @@
 class SaberCrystal(object):
-    def __init__(self, color=(255,0,0)):
+    def __init__(self, color=(255, 0, 0)):
         self.color = color
 
     def __eq__(self, other):
@@ -16,9 +16,18 @@ class SaberCrystal(object):
                 raise TypeError("Can't perform operation with SaberCrystal "
                                 "object and {}".format(type(other).__name__))
             other_crystal = other
-        result_crystal = SaberCrystal(color = (self.red + other_crystal.red,
-                                      self.green + other_crystal.green,
-                                      self.blue + other_crystal.blue))
+            colors = {}
+            colors['red'] = self.red + other_crystal.red
+            colors['green'] = self.green + other_crystal.green
+            colors['blue'] = self.blue + other_crystal.blue
+
+            for color, value in colors.items():
+                if value > 255:
+                    colors[color] = 255
+
+        result_crystal = SaberCrystal(color=(colors["red"],
+                                             colors["green"],
+                                             colors["blue"]))
         return result_crystal
 
     def __iadd__(self, other):
@@ -36,4 +45,3 @@ class SaberCrystal(object):
     @property
     def blue(self):
         return self.color[2]
-
