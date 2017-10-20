@@ -31,7 +31,7 @@ class SaberCrystal(object):
         return result_crystal
 
     def __iadd__(self, other):
-        return self + (self + other)
+        return self + other
 
     def __sub__(self, other):
         other_color = other
