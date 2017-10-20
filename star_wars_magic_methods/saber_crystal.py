@@ -31,7 +31,6 @@ class SaberCrystal(object):
         return result_crystal
 
     def __iadd__(self, other):
-        print self, other
         return self + (self + other)
 
     def __sub__(self, other):
@@ -56,6 +55,8 @@ class SaberCrystal(object):
                                              colors["blue"]))
         return result_crystal
 
+    def __isub__(self, other):
+        return self - other
 
     @property
     def red(self):
@@ -68,24 +69,3 @@ class SaberCrystal(object):
     @property
     def blue(self):
         return self.color[2]
-
-
-green = (0,255,0)
-green_crystal = SaberCrystal(color=green)
-blue = (0,0,255)
-blue_crystal = SaberCrystal(color=blue)
-white_crystal = SaberCrystal(color=(255,255,255))
-print((white_crystal - blue_crystal - green_crystal).color)
-print((white_crystal - blue - green).color)
-
-'''
-    def test_subtraction(self):
-        red_crystal = SaberCrystal()
-        green = (0,255,0)
-        green_crystal = SaberCrystal(color=green)
-        blue = (0,0,255)
-        blue_crystal = SaberCrystal(color=blue)
-        white_crystal = SaberCrystal(color=(255,255,255))
-        self.assertEquals(white_crystal - blue_crystal - green_crystal, red_crystal)
-        self.assertEquals(white_crystal - blue - green, red_crystal)
-'''
