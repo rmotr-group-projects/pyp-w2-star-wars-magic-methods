@@ -58,6 +58,15 @@ class SaberCrystal(object):
     def __isub__(self, other):
         return self - other
 
+    def __contains__(self, other):
+        if isinstance(other, SaberCrystal):
+            other_color = other.color
+        else:
+            other_color = other
+        compared_values = ([(other_val <= self_val) for self_val, other_val in
+                           zip(self.color, other_color)])
+        return compared_values.count(True) == len(compared_values)
+
     @property
     def red(self):
         return self.color[0]
