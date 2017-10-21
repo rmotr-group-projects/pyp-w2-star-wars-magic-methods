@@ -48,5 +48,5 @@ class People(object):
       
     def __eq__(self, other):
       if other.name == 'Han Solo':
-        return "{} shoots {}. BECAUSE {} SHOOTS FIRST.".format(other.name, self.name, other.name.split(" ")[0].upper())
+        return "{} shoots {}. BECAUSE {} SHOOTS FIRST.".format(other.name, self.name, other.name[0:3].upper())
       return "{} shoots {}.".format(self.name, other.name)
