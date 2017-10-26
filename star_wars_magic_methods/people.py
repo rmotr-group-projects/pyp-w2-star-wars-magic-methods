@@ -18,6 +18,7 @@ class People(object):
     def __call__(self):
         return "Help me " + self.name + ", you're my only hope."
 
+    __truediv__ = __div__
     def __div__(self, other):
         if isinstance(other, People):
             return self.name + ' swings a lightsaber at ' + other.name + '.'
