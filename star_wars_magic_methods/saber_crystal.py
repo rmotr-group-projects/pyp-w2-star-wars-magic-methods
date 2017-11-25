@@ -9,6 +9,8 @@ class SaberCrystal(object):
         return self.red, self.green, self.blue
 
     def __eq__(self, other):
+        if not isinstance(other, SaberCrystal):
+            raise TypeError()
         return self.red == other.red and self.green == other.green and self.blue == other.blue
 
     def __add__(self, other):

@@ -22,30 +22,26 @@ class People(object):
         return "Help me {}, you're my only hope.".format(self.name)
 
     def __div__(self, other):
-        if type(other) is People:
-            return "{} swings a lightsaber at {}.".format(self.name, other.name)
-        else:
-            raise TypeError
+        if not isinstance(other, People):
+            raise TypeError()
+        return "{} swings a lightsaber at {}.".format(self.name, other.name)
 
     __truediv__ = __div__
 
     def __mul__(self, other):
-        if type(other) is People:
-            return "{} throws a thermal detonator at {}!".format(self.name, other.name)
-        else:
-            raise TypeError
+        if not isinstance(other, People):
+            raise TypeError()
+        return "{} throws a thermal detonator at {}!".format(self.name, other.name)
 
     def __rshift__(self, other):
-        if type(other) is People:
-            return "{} uses the force to push {} away from them.".format(self.name, other.name)
-        else:
-            raise TypeError
+        if not isinstance(other, People):
+            raise TypeError()
+        return "{} uses the force to push {} away from them.".format(self.name, other.name)
 
     def __lshift__(self, other):
-        if type(other) is People:
-            return "{} uses the force to pull {} towards them.".format(self.name, other.name)
-        else:
-            raise TypeError
+        if not isinstance(other, People):
+            raise TypeError()
+        return "{} uses the force to pull {} towards them.".format(self.name, other.name)
 
     def __neg__(self):
         self.__dark_side = True
@@ -57,9 +53,13 @@ class People(object):
         self.__dark_side = not self.__dark_side
 
     def __xor__(self, other):
+        if not isinstance(other, People):
+            raise TypeError()
         return "{} force chokes {}.".format(self.name, other.name)
 
     def __eq__(self, other):
+        if not isinstance(other, People):
+            raise TypeError()
         if self.name == "Greedo" and other.name == "Han Solo":
             return 'Han Solo shoots Greedo. BECAUSE HAN SHOOTS FIRST.'
         return "{} shoots {}.".format(self.name, other.name)
