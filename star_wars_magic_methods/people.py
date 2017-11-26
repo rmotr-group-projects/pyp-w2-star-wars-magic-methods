@@ -22,6 +22,7 @@ class People(object):
 
     def __truediv__(self, other):
         '''lightsaber'''
+
         if not isinstance(other, People):
             raise TypeError()
 
@@ -62,8 +63,14 @@ class People(object):
         # in this case, why not just self.dark_side = True?
         self.ddark_side = True
 
-    # light_side
+    def __pos__(self):
+        '''turn to light side'''
+
+        self.ddark_side = False
+
     # change side
+    # force choke
+    # shoots
 
 
 
