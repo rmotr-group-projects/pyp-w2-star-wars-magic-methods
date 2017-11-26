@@ -10,6 +10,9 @@ class People(object):
     def __str__(self):
         return self.name
 
+    def __call__(self):
+        return "Help me %s, you're my only hope." % self.name
+
     def __truediv__(self, other):
 
         if type(other) is float:
