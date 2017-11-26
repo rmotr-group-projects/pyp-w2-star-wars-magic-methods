@@ -2,11 +2,15 @@ class People(object):
 
     def __init__(self, name, dark_side=False):
         self.name = name
-        self.dark_side = dark_side
+        self.ddark_side = dark_side
 
     @property
     def light_side(self):
-        return True if not self.dark_side else self.dark_side
+        return not self.ddark_side
+
+    @property
+    def dark_side(self):
+        return self.ddark_side
 
     def __str__(self):
         '''string'''
@@ -42,3 +46,24 @@ class People(object):
             raise TypeError()
 
         return "%s uses the force to push %s away from them." % (self.name, other)
+
+    def __lshift__(self, other):
+        '''force pull'''
+
+        if not isinstance(other, People):
+            raise TypeError()
+
+        return "%s uses the force to pull %s towards them." % (self.name, other)
+
+    def __neg__(self):
+        '''turn to dark side'''
+
+        # ???: Why this does not work if we initialized dark_side like: self.dark_side = dark_side?
+        # in this case, why not just self.dark_side = True?
+        self.ddark_side = True
+
+    # light_side
+    # change side
+
+
+
