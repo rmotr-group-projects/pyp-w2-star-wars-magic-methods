@@ -68,8 +68,25 @@ class People(object):
 
         self.ddark_side = False
 
-    # change side
-    # force choke
+    def __invert__(self):
+        '''change sides'''
+
+        self.ddark_side = self.light_side
+
+    def __xor__(self, other):
+        '''force chokes'''
+        # return "%s force chokes %s." % (self.name, other)
+        return "{0} force chokes {1}.".format(self.name, other)
+
+    def __eq__(self, other):
+        '''shoots'''
+
+        # ???: Trick question? Hard coded names in class
+        if self.name == 'Greedo' and other.name == 'Han Solo':
+            return 'Han Solo shoots Greedo. BECAUSE HAN SHOOTS FIRST.'
+        else:
+            return '%s shoots %s.' % (self.name, other)
+
     # shoots
 
 
