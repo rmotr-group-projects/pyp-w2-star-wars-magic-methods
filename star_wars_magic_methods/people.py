@@ -33,10 +33,10 @@ class People(object):
         '''thermal detonator'''
 
         # ???: why does this raise exception not work
-        # if type(other) is not str:
-        #     raise TypeError()
-        if not isinstance(other, People):
+        if type(other) is not str:
             raise TypeError()
+        # if not isinstance(other, People):
+        #     raise TypeError()
 
         return "%s throws a thermal detonator at %s!" % (self.name, other)
 
@@ -86,8 +86,3 @@ class People(object):
             return 'Han Solo shoots Greedo. BECAUSE HAN SHOOTS FIRST.'
         else:
             return '%s shoots %s.' % (self.name, other)
-
-    # shoots
-
-
-
