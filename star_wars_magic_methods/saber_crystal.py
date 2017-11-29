@@ -15,14 +15,16 @@ class SaberCrystal(object):
 
     def __add__(self, other):
         return SaberCrystal(
-            color=[min(255, x + y) for x, y in zip(self.color, other.color if type(other) is SaberCrystal else other)])
+            color=[min(255, x + y) for x, y in
+                   zip(self.color, other.color if isinstance(other, SaberCrystal) else other)])
 
     def __sub__(self, other):
         return SaberCrystal(
-            color=[max(0, x - y) for x, y in zip(self.color, other.color if type(other) is SaberCrystal else other)])
+            color=[max(0, x - y) for x, y in
+                   zip(self.color, other.color if isinstance(other, SaberCrystal) else other)])
 
     def __contains__(self, item):
-        if type(item) is SaberCrystal:
+        if isinstance(item, SaberCrystal):
             item = item.color
         for index, val in enumerate(item):
             if val != 0 and self.color[index] != val:
