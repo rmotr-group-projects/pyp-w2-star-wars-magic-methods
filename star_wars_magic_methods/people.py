@@ -18,7 +18,8 @@ class People(object):
             return "{} swings a lightsaber at {}.".format(self.name, other.name)
         except: 
             raise TypeError()
-            
+    __trudiv__ = __div__ 
+    
     def __mul__(self, other):
         try:
             return "{} throws a thermal detonator at {}!".format(self.name, other.name)
