@@ -27,16 +27,14 @@ class People(object):
             raise TypeError()
 
         # 1???: How does method know that other is using the name attribute from the class?
+        # How come both other and other.name works here?
         return "%s swings a lightsaber at %s." % (self.name, other)
 
     def __mul__(self, other):
         '''thermal detonator'''
 
-        # 2???: why does this raise exception not work
-        if type(other) is not str:
+        if not isinstance(other, People):
             raise TypeError()
-        # if not isinstance(other, People):
-        #     raise TypeError()
 
         return "%s throws a thermal detonator at %s!" % (self.name, other)
 
@@ -59,8 +57,7 @@ class People(object):
     def __neg__(self):
         '''turn to dark side'''
 
-        # 3???: Why this does not work if we initialized dark_side like: self.dark_side = dark_side?
-        # in this case, why not just self.dark_side = True?
+        # 3???: How come this doesn't work if we initialized dark_side like: self.dark_side = dark_side instead of self.ddark_side = dark_side?
         self.ddark_side = True
 
     def __pos__(self):
@@ -81,8 +78,7 @@ class People(object):
     def __eq__(self, other):
         '''shoots'''
 
-        # ???: Trick question? Hard coded names in class
-        if self.name == 'Greedo' and other.name == 'Han Solo':
-            return 'Han Solo shoots Greedo. BECAUSE HAN SHOOTS FIRST.'
+        if other.name == 'Han Solo':
+            return 'Han Solo shoots %s. BECAUSE HAN SHOOTS FIRST.' % self.name
         else:
             return '%s shoots %s.' % (self.name, other)
