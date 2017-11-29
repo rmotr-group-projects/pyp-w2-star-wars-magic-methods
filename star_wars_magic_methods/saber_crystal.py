@@ -54,8 +54,8 @@ class SaberCrystal(object):
         if isinstance(item, tuple) and isinstance(self, tuple):
             for i in range(0, 3):
                 item_idx = [idx for idx, v in enumerate(item) if v == item[i]]
-                self_idx = [idx for idx, v in enumerate(self) if v == self[i]]
-                if self[i] == item[i] and set(item_idx).issubset(self_idx):
+                self_idx = [idx for idx, v in enumerate(self) if v == getattr(self, i)]
+                if getattr(self, i) == item[i] and set(item_idx).issubset(self_idx):
                     return True
             return False
         elif isinstance(item, tuple) and isinstance(self, SaberCrystal):
@@ -76,6 +76,6 @@ class SaberCrystal(object):
             for i in range(0, 3):
                 item_idx = [idx for idx, v in enumerate(item.color) if v == item.color[i]]
                 self_idx = [idx for idx, v in enumerate(self) if v == self.color[i]]
-                if self[i] == item.color[i] and set(item_idx).issubset(self_idx):
+                if getattr(self, i) == item.color[i] and set(item_idx).issubset(self_idx):
                     return True
             return False
