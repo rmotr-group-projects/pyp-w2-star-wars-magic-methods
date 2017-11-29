@@ -7,7 +7,7 @@ class People(object):
             self.light_side = False
     
     def __str__(self):
-        return '%s' % self.name 
+        return '{}'.format(self.name)
     
     def __call__(self):
         if self.name == 'Obi-Wan Kenobi':
@@ -15,25 +15,25 @@ class People(object):
     
     def __div__(self, other): 
         try:
-            return "%s swings a lightsaber at %s." % (self.name, other.name)
+            return "{} swings a lightsaber at {}.".format(self.name, other.name)
         except: 
             raise TypeError()
             
     def __mul__(self, other):
         try:
-            return "%s throws a thermal detonator at %s!" % (self.name, other.name)
+            return "{} throws a thermal detonator at {}!".format(self.name, other.name)
         except: 
             raise TypeError()
     
     def __rshift__(self, other):
         try: 
-            return "%s uses the force to push %s away from them." % (self.name, other.name)
+            return "{} uses the force to push {} away from them.".format(self.name, other.name)
         except:
             raise TypeError()
         
     def __lshift__(self, other):
         try:
-            return "%s uses the force to pull %s towards them." % (self.name, other.name)
+            return "{} uses the force to pull {} towards them.".format(self.name, other.name)
         except:
             raise TypeError()
     
@@ -57,15 +57,15 @@ class People(object):
     
     def __xor__(self, other): 
         try:
-            return "%s force chokes %s." % (self.name, other.name) 
+            return "{} force chokes {}.".format(self.name, other.name) 
         except:
             raise TypeError() 
     
     def __eq__(self, other):
         try: 
             if other.name == "Han Solo": 
-                return "%s shoots %s. BECAUSE HAN SHOOTS FIRST." % (other.name, self.name)
+                return "{} shoots {}. BECAUSE HAN SHOOTS FIRST.".format(other.name, self.name)
             else:
-                return "%s shoots %s." % (self.name, other.name)
+                return "{} shoots {}.".format(self.name, other.name)
         except:
             raise TypeError()
