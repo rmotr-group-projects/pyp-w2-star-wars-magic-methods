@@ -22,7 +22,7 @@ class People(object):
             return "{} swings a lightsaber at {}.".format(self.name, other.name)
         except: 
             raise TypeError()
-    __trudiv__ = __div__ 
+    __truediv__ = __div__ 
     
     def __mul__(self, other):
         try:
@@ -42,7 +42,9 @@ class People(object):
         except:
             raise TypeError()
     
-
+    def __pos__(self):
+        self.dark_side = False 
+        
     def __neg__(self):
         if self.dark_side == True: 
             self.dark_side = False 
@@ -52,8 +54,7 @@ class People(object):
     def __invert__(self):
         self.__neg__()
     
-    def __pos__(self):
-        self.dark_side = False 
+    
         
     def __xor__(self, other): 
         try:
