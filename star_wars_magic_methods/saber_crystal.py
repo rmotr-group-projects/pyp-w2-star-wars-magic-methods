@@ -18,11 +18,13 @@ class SaberCrystal(object):
 
         r, g, b = color_attr
 
-        color_sum = (self.red + r,
-                     self.green + g,
-                     self.blue + b)
+        sum_color_list = [self.red + r,
+                          self.green + g,
+                          self.blue + b]
 
-        return SaberCrystal(color=color_sum)
+        color_sum = [s if s <= 255 else 255 for s in sum_color_list]
+
+        return SaberCrystal(color=tuple(color_sum))
 
     def __iadd__(self, other):
 
@@ -33,11 +35,13 @@ class SaberCrystal(object):
 
         r, g, b = color_attr
 
-        color_sum = (self.red + r,
-                     self.green + g,
-                     self.blue + b)
+        sum_color_list = [self.red + r,
+                          self.green + g,
+                          self.blue + b]
 
-        return SaberCrystal(color=color_sum)
+        color_sum = [s if s <= 255 else 255 for s in sum_color_list]
+
+        return SaberCrystal(color=tuple(color_sum))
 
     def __sub__(self, other):
         if isinstance(other, SaberCrystal):
