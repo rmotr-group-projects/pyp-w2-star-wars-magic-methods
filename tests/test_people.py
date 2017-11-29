@@ -66,7 +66,7 @@ class PeopleTestCase(unittest.TestCase):
         self.assertFalse(revan.light_side)
         ~revan
         self.assertTrue(revan.light_side)
-        
+
     def test_force_choke(self):
         vader = People('Darth Vader')
         motti = People('Admiral Motti')
