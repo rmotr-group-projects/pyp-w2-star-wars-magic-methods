@@ -72,8 +72,7 @@ class People(object):
 
     def __xor__(self, other):
         '''force chokes'''
-        # return "%s force chokes %s." % (self.name, other)
-        return "{0} force chokes {1}.".format(self.name, other)
+        return "%s force chokes %s." % (self.name, other)
 
     def __eq__(self, other):
         '''shoots'''
