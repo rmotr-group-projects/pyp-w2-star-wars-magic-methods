@@ -25,6 +25,13 @@ class People(object):
     def __call__(self):
         return 'Help me ' + self.name + ', you\'re my only hope.'
     
+    def __truediv__(self, other):
+        try:
+            self.name + ' swings a lightsaber at ' + other.name + '.'
+        except:
+            raise TypeError
+         
+    
 
         
         
