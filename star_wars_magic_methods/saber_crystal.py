@@ -71,15 +71,14 @@ class SaberCrystal(object):
 
         return SaberCrystal(color=color_sub)
 
+    def __contains__(self, other):
+        if isinstance(other, SaberCrystal):
+            color_attr = other.color
+        elif isinstance(other, tuple):
+            color_attr = other
 
+        color_match = [c1 == c2 for c1, c2
+                       in zip(self.color, color_attr)
+                       if any([c1, c2])]
 
-# red_crystal = SaberCrystal()
-
-# green = (0, 255, 0)
-# green_crystal = SaberCrystal(color=green)
-
-# blue = (0, 0, 255)
-# blue_crystal = SaberCrystal(color=blue)
-# white_crystal = SaberCrystal(color=(255, 255, 255))
-
-# red_crystal + blue_crystal
+        return any(color_match)
