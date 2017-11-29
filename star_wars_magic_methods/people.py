@@ -57,7 +57,7 @@ class People(object):
     def __neg__(self):
         '''turn to dark side'''
 
-        # 3???: How come this doesn't work if we initialized dark_side like: self.dark_side = dark_side instead of self.ddark_side = dark_side?
+        # 2???: How come this doesn't work if we initialized dark_side like: self.dark_side = dark_side instead of self.ddark_side = dark_side?
         self.ddark_side = True
 
     def __pos__(self):
