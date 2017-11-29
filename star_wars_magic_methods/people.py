@@ -2,19 +2,13 @@ class People(object):
     def __init__(self, name, dark_side=False):
         self.name = name 
         self.dark_side = dark_side 
-        
-            
-    @property 
-    def dark_side(self):
-        return self.dark 
+
     
     @property
     def light_side(self):
-        if dark_side == False:
-            self.light_side = True
-        else: 
-            self.light_side = False 
-    return self.light_side
+        if self.dark_side == False: 
+            return True 
+        return False
             
     def __str__(self):
         return '{}'.format(self.name)
@@ -48,24 +42,19 @@ class People(object):
         except:
             raise TypeError()
     
-    def __pos__(self):
-        if self.dark_side == True:
-            self.dark_side = False
-            self.light_side = True
-            
+
     def __neg__(self):
-        if self.light_side == True and self.dark_side == False:
-            self.dark_side = True
-            self.light_side = False
-    
-    def __invert__(self):
-        if self.dark_side == True and self.light_side == False: 
+        if self.dark_side == True: 
             self.dark_side = False 
-            self.light_side = True
         else: 
             self.dark_side = True
-            self.light_side = False
+
+    def __invert__(self):
+        self.__neg__()
     
+    def __pos__(self):
+        self.dark_side = False 
+        
     def __xor__(self, other): 
         try:
             return "{} force chokes {}.".format(self.name, other.name) 
