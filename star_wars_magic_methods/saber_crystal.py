@@ -1,10 +1,13 @@
 class SaberCrystal(object):
-    def __init__(self, color=(255,0,0), red=255, green=0, blue=0):
-        self.color = color 
-        self.red = 255
-        self.green = 0 
-        self.blue = 0 
+    def __init__(self, color=(255,0,0)):
+        self.red = color[0]
+        self.green = color[1]
+        self.blue = color[2]
     
+    @property
+    def color(self):
+        return self.red, self.green, self.blue
+        
     def __eq__(self, other):
         return self.color == other.color
     
