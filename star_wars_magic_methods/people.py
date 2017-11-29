@@ -1,11 +1,21 @@
 class People(object):
-    def __init__(self, name, dark_side=False, light_side=True):
+    def __init__(self, name, dark_side=False):
         self.name = name 
         self.dark_side = dark_side 
-        self.light_side = light_side
-        if dark_side == True:
-            self.light_side = False
+        
+            
+    @property 
+    def dark_side(self):
+        return self.dark 
     
+    @property
+    def light_side(self):
+        if dark_side == False:
+            self.light_side = True
+        else: 
+            self.light_side = False 
+    return self.light_side
+            
     def __str__(self):
         return '{}'.format(self.name)
     
