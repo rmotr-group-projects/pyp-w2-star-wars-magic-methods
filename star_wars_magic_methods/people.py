@@ -26,13 +26,13 @@ class People(object):
         if not isinstance(other, People):
             raise TypeError()
 
-        # ???: How does method know that other is using the name attribute from the class?
+        # 1???: How does method know that other is using the name attribute from the class?
         return "%s swings a lightsaber at %s." % (self.name, other)
 
     def __mul__(self, other):
         '''thermal detonator'''
 
-        # ???: why does this raise exception not work
+        # 2???: why does this raise exception not work
         if type(other) is not str:
             raise TypeError()
         # if not isinstance(other, People):
@@ -59,7 +59,7 @@ class People(object):
     def __neg__(self):
         '''turn to dark side'''
 
-        # ???: Why this does not work if we initialized dark_side like: self.dark_side = dark_side?
+        # 3???: Why this does not work if we initialized dark_side like: self.dark_side = dark_side?
         # in this case, why not just self.dark_side = True?
         self.ddark_side = True
 
