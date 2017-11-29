@@ -64,18 +64,6 @@ class SaberCrystal(object):
             return any(color_match)
         
 
-# red_crystal = SaberCrystal()
-# green = (0,0,0)
-# green_crystal = SaberCrystal(color=green)
-# print(red_crystal in green_crystal)
-
-# # blue = (0,0,255)
-# # blue_crystal = SaberCrystal(color=blue)
-# # white_crystal = SaberCrystal(color=(255,255,255))
-# # self.assertTrue(red_crystal in white_crystal)
-# # self.assertFalse(red_crystal in green_crystal)
-# # self.assertTrue(green in white_crystal)
-# # self.assertFalse(blue in red_crystal)
 
 
 

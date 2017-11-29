@@ -30,9 +30,6 @@ class People(object):
     def __str__(self):
         return self.name
     
-    # def __eq__(self, other_string):
-    #     return self.name == other_string
-    
     def __call__(self):                  
         return "Help me Obi-Wan Kenobi, you're my only hope."
 
@@ -40,6 +37,11 @@ class People(object):
         if isinstance(other, People) == False: #and isinstance(other, str) == False:
             raise TypeError
         return self.name + " swings a lightsaber at "+ other.name + "."
+        
+    def __truediv__(self,other):
+        if isinstance(other, People) == False: #and isinstance(other, str) == False:
+            raise TypeError
+        return self.name + " swings a lightsaber at "+ other.name + "."    
 
     def __mul__(self,other):
         if isinstance(other, People) == False: #and isinstance(other, str) == False:
@@ -80,7 +82,6 @@ class People(object):
             return self.name + " shoots "+ other.name + "."
         else:
             return other.name + " shoots "+ self.name + ". BECAUSE HAN SHOOTS FIRST."
-
 
 
 
