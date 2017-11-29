@@ -11,6 +11,7 @@ class SaberCrystal(object):
         return (self.color == other)
 
     def __add__(self, other):
+
         if isinstance(other, SaberCrystal):
             color_attr = other.color
         elif isinstance(other, tuple):
@@ -44,6 +45,7 @@ class SaberCrystal(object):
         return SaberCrystal(color=tuple(color_sum))
 
     def __sub__(self, other):
+
         if isinstance(other, SaberCrystal):
             color_attr = other.color
         elif isinstance(other, tuple):
@@ -58,6 +60,7 @@ class SaberCrystal(object):
         return SaberCrystal(color=color_sub)
 
     def __isub__(self, other):
+
         if isinstance(other, SaberCrystal):
             color_attr = other.color
         elif isinstance(other, tuple):
@@ -72,6 +75,7 @@ class SaberCrystal(object):
         return SaberCrystal(color=color_sub)
 
     def __contains__(self, other):
+
         if isinstance(other, SaberCrystal):
             color_attr = other.color
         elif isinstance(other, tuple):
