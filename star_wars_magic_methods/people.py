@@ -18,15 +18,14 @@ class People(object):
     @light_side.setter
     def light_side(self, value):
         self._light_side = not value
-
-
-        
-        # def call():
-        #     return 'Help me ' + self.name + ', you\'re my only hope.'
     
+    def __str__(self):
+        return self.name
+
+    def __call__(self):
+        return 'Help me ' + self.name + ', you\'re my only hope.'
     
-        def __str__():
-            return self.name
+
         
         
             
