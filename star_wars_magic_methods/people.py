@@ -68,15 +68,15 @@ class People(object):
         if self.name == 'Greedo' and other.name == 'Han Solo':
             shoot = 'Han Solo shoots Greedo. BECAUSE HAN SHOOTS FIRST.'
         return shoot
-    
+
     def __neg__(self):
         self.light_side = False
         self.dark_side = True
-    
+
     def __pos__(self):
         self.light_side = True
         self.dark_side = False
-    
+
     def __invert__(self):
         self.light_side = not self.light_side
         self.dark_side = not self.dark_side
