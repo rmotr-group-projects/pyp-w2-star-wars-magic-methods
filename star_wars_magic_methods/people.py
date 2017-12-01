@@ -20,9 +20,9 @@ class People(object):
     def obiwan(self):
         return "Help me Obi-Wan Kenobi, you're my only hope."
         
-    def __div__(self, other):
-        if type(other) is float:
-            raise TypeError('not string')
+    def __truediv__(self, other):
+        if isinstance(other, People):
+            raise TypeError()
         else:
             return self.name + " swings a lightsaber at " + other.name + '.'
     
