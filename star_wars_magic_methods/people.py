@@ -16,15 +16,13 @@ class People(object):
         
     def __str__(self):
         return self.name
-    
-    def obiwan(self):
-        return "Help me Obi-Wan Kenobi, you're my only hope."
         
-    def __truediv__(self, other):
-        if isinstance(other, People):
+    def __div__(self, other):
+        if not isinstance(other, People):
             raise TypeError()
-        else:
-            return self.name + " swings a lightsaber at " + other.name + '.'
+        return "{self} swings a lightsaber at {other}.".format(self=self, other=other)
+    
+    __truediv__ = __div__
     
     def __mul__(self, other):
         if type(other) is int:
@@ -42,6 +40,9 @@ class People(object):
         self._dark_side = True
     
     def __eq__(self, other):
+        if not isinstance(other, People):
+            raise TypeError()
+        
         if self.name == "Han Solo":
             return self.name + " shoots " + other.name + "."
         return other.name + " shoots " + self.name + ". BECAUSE HAN SHOOTS FIRST."
