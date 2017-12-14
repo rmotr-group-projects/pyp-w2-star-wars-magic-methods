@@ -10,7 +10,7 @@ class People(object):
         return "Help me {self}, you're my only hope.".format(self=self)
 
     def __truediv__(self, other): # /
-        if not isinstance(other, People):
+        if isinstance(other, People):
             raise TypeError()
         return "{self} swings a lightsaber at {other}.".format(self=self, other=other)
 
