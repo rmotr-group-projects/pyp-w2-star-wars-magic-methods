@@ -33,9 +33,9 @@ setup(
     packages=['star_wars_magic_methods'],
     maintainer='rmotr.com',
     tests_require=[
-        'pytest==3.0.6',
-        'pytest-cov==2.4.0',
-        'coverage==4.2'
+        'pytest==3.8.1',
+        'pytest-cov==2.6.0',
+        'coverage==4.5.1'
     ],
     zip_safe=False,
     cmdclass={'test': PyTest},
